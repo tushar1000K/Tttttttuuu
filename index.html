@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Register App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+        
+        body { font-family: 'Roboto', sans-serif; }
+        
+        .app-container {
+            max-width: 420px;
+            margin: 20px auto;
+            border: 14px solid #111827;
+            border-radius: 48px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            background: #0A2540;
+            height: 780px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .status-bar {
+            background: #0A2540;
+            color: white;
+            padding: 10px 20px;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .header {
+            background: #0A2540;
+            color: white;
+            text-align: center;
+            padding: 16px 0;
+            font-size: 19px;
+            font-weight: 600;
+        }
+        
+        .red-buttons {
+            display: flex;
+            gap: 10px;
+            padding: 12px 16px;
+            background: #0A2540;
+        }
+        
+        .red-btn {
+            flex: 1;
+            background: #ef4444;
+            color: white;
+            padding: 16px;
+            text-align: center;
+            font-weight: 700;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+        
+        .scroll-area {
+            flex: 1;
+            overflow-y: auto;
+            padding: 0 16px;
+            background: #0A2540;
+        }
+        
+        .device-card {
+            background: white;
+            border-radius: 14px;
+            padding: 14px;
+            margin-bottom: 14px;
+            display: flex;
+            gap: 14px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .device-img {
+            width: 72px;
+            height: 72px;
+            background: #e2e8f0;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            flex-shrink: 0;
+        }
+        
+        .available {
+            background: #1e40af;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 14px;
+            font-size: 22px;
+            font-weight: 700;
+        }
+        
+        .bottom-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            padding-bottom: 30px;
+        }
+        
+        .bottom-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .scroll-area::-webkit-scrollbar { width: 6px; }
+        .scroll-area::-webkit-scrollbar-thumb { background: #64748b; border-radius: 20px; }
+    </style>
+</head>
+<body class="bg-zinc-950 py-8">
+    <div class="app-container">
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div>1:19 AM</div>
+            <div>30.6 K/S   📶 Vo 4G+ 5G WiFi  83%</div>
+        </div>
+
+        <!-- Header -->
+        <div class="header">Register : 01/01/2026</div>
+
+        <!-- Red Buttons -->
+        <div class="red-buttons">
+            <div class="red-btn">ALL DELETE USER</div>
+            <div class="red-btn">UPDATE NO</div>
+        </div>
+
+        <!-- Scrollable Area -->
+        <div class="scroll-area">
+            <!-- Devices -->
+            <div class="device-card">
+                <div class="device-img">📱</div>
+                <div>
+                    <div class="font-bold text-lg">Samsung Galaxy S23 (South Korea)</div>
+                    <div class="text-sm text-gray-600 mt-1">Device Id : 77114b8222276960</div>
+                    <div class="text-sm text-gray-600">Battery : 92%</div>
+                    <div class="text-sm text-gray-600">Country : South Korea</div>
+                </div>
+            </div>
+
+            <div class="device-card">
+                <div class="device-img">📱</div>
+                <div>
+                    <div class="font-bold text-lg">Google Pixel 7 (USA)</div>
+                    <div class="text-sm text-gray-600 mt-1">Device Id : 8822993344115566</div>
+                    <div class="text-sm text-gray-600">Battery : 78%</div>
+                    <div class="text-sm text-gray-600">Country : USA</div>
+                </div>
+            </div>
+
+            <div class="device-card">
+                <div class="device-img">📱</div>
+                <div>
+                    <div class="font-bold text-lg">OnePlus 11 (China)</div>
+                    <div class="text-sm text-gray-600 mt-1">Device Id : 9988776655443322</div>
+                    <div class="text-sm text-gray-600">Battery : 95%</div>
+                    <div class="text-sm text-gray-600">Country : China</div>
+                </div>
+            </div>
+
+            <div class="device-card">
+                <div class="device-img">📱</div>
+                <div>
+                    <div class="font-bold text-lg">Xiaomi 13 Pro (Japan)</div>
+                    <div class="text-sm text-gray-600 mt-1">Device Id : 1122334455667788</div>
+                    <div class="text-sm text-gray-600">Battery : 88%</div>
+                    <div class="text-sm text-gray-600">Country : Japan</div>
+                </div>
+            </div>
+
+            <div class="device-card">
+                <div class="device-img">📱</div>
+                <div>
+                    <div class="font-bold text-lg">Oppo Find X6 (Germany)</div>
+                    <div class="text-sm text-gray-600 mt-1">Device Id : 5566778899001122</div>
+                    <div class="text-sm text-gray-600">Battery : 81%</div>
+                    <div class="text-sm text-gray-600">Country : Germany</div>
+                </div>
+            </div>
+
+            <div class="device-card">
+                <div class="device-img">📱</div>
+                <div>
+                    <div class="font-bold text-lg">Huawei P60 Pro (Brazil)</div>
+                    <div class="text-sm text-gray-600 mt-1">Device Id : 3344115566778899</div>
+                    <div class="text-sm text-gray-600">Battery : 97%</div>
+                    <div class="text-sm text-gray-600">Country : Brazil</div>
+                </div>
+            </div>
+
+            <div class="device-card">
+                <div class="device-img">📱</div>
+                <div>
+                    <div class="font-bold text-lg">Sony Xperia 1 V (UK)</div>
+                    <div class="text-sm text-gray-600 mt-1">Device Id : 7788990011223344</div>
+                    <div class="text-sm text-gray-600">Battery : 74%</div>
+                    <div class="text-sm text-gray-600">Country : UK</div>
+                </div>
+            </div>
+
+            <div class="device-card">
+                <div class="device-img">📱</div>
+                <div>
+                    <div class="font-bold text-lg">Nothing Phone (2) (Australia)</div>
+                    <div class="text-sm text-gray-600 mt-1">Device Id : 9900112233445566</div>
+                    <div class="text-sm text-gray-600">Battery : 89%</div>
+                    <div class="text-sm text-gray-600">Country : Australia</div>
+                </div>
+            </div>
+
+            <!-- Available Numbers -->
+            <div class="available">
+                Available Numbers : 316
+            </div>
+
+            <!-- Bottom Cards -->
+            <div class="bottom-grid">
+                <div class="bottom-card">
+                    <img src="https://picsum.photos/id/1015/400/220" class="w-full">
+                    <div class="p-3 text-center font-semibold">Google Pixel 7</div>
+                </div>
+                <div class="bottom-card">
+                    <img src="https://picsum.photos/id/1016/400/220" class="w-full">
+                    <div class="p-3 text-center font-semibold">OnePlus 11</div>
+                </div>
+                <div class="bottom-card">
+                    <img src="https://picsum.photos/id/1018/400/220" class="w-full">
+                    <div class="p-3 text-center font-semibold">Huawei P60 Pro</div>
+                </div>
+                <div class="bottom-card">
+                    <img src="https://picsum.photos/id/1020/400/220" class="w-full">
+                    <div class="p-3 text-center font-semibold">Nothing Phone (2)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center text-white mt-10 text-sm">
+        Mobile App jaisa look •
